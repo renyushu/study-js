@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+      var num = 0;
+      //开启一个定时器
+      // setInterval(function () {
+      //   console.log(num++);
+      // }, 1000)
+
+      //延时调用
+      /**
+       * 延迟调用一个函数，不是马上执行，而是隔一段事件以后在执行，而且只会执行一次
+       *
+       *
+       */
+      var timer = setTimeout(function () {
+        console.log(num++);
+      }, 3000);
+      //关闭延迟调用
+      clearTimeout(timer);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

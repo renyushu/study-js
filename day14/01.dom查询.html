@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+
+            /**
+             * 定义一个函数，专门用来为指定元素绑定单击响应函数
+             *  idStr: id
+             *  fun: 回调函数
+             *
+             */
+            function myClick(idStr, fun) {
+                    var btn = document.getElementById(idStr);
+                    btn.onclick = fun;
+            }
+
+            window.onload = function() {
+                //为id btn01的按钮绑定一个单击响应函数
+                myClick("btn01", function() {
+                    //查找#bj节点
+                    var bj = document.getElementById("bj");
+                    //打印bj
+                    alert(bj.innerHTML);
+                })
+
+                //为id为btn02的按钮绑定一个单击响应函数
+                var btn02 = document.getElementById("btn02");
+                btn02.onclick = function() {
+                    //查找所有的li节点
+                    //getElementsByTagName()可以根据标签名来获取一组元素节点对象
+                    //这个方法会给我返回一个数组对象，所有查询到的元素都会封装到对象中
+                    var lis = document.getElementsByTagName("li");//返回的是一个数组
+                    //打印lis
+                    // alert(lis.length);
+                    for(var i = 0; i < lis.length; i++){
+                        alert(lis[i].innerHTML);//打印文字
+                    }
+                }
+
+                //为id为btn03的按钮绑定一个单击响应函数
+                var btn03 = document.getElementById("btn03");
+                btn03.onclick = function() {
+                    //查找name=gender的所有节点
+                    var inputs = document.getElementsByName("gender");
+                    for(var i = 0; i < inputs.length; i++){
+                        /*
+                        innerHTML用于获取元素内部的html代码的
+                            对于自结束标签没有意义
+
+                         如果需要读取元素节点属性，
+                            直接使用 元素.属性名
+                            注意：class属性不能采用这种方式.
+                                读取时需要使用 .className
+
+                         */
+                        alert(inputs[i].value);
+                    }
+                }
+
+                //为id为btn04的按钮绑定一个单击响应函数
+                var btn04 = document.getElementById("btn04");
+                btn04.conclick = function (){
+                    //获取id为city的元素
+                    var city = document.getElementById("city");
+                    //查找#city下所有的li节点
+                    var lis = city.getElementsByTagName("li");
+                    for(var i = 0; i < lis.length; i++){
+                        alert(lis[i].innerHTML);
+                    }
+                }
+
+                //为id为btn05的按钮绑定一个单击响应函数
+                var btn05 = document.getElementById("btn05");
+                btn05.onclick = function () {
+                    //获取id为city的节点
+                    var city = document.getElementById("city");
+                    //返回#city的所有子节点
+                    /**
+                     * childNodes属性会获取包括文本节点在的所有即诶单
+                     * 根据DOM标签 标签间的空白也会当成文本节点
+                     *
+                     *
+                     */
+                    var cns = city.childNodes;
+                    alert(cns.length);
+
+                    /**
+                     * children属性可以获取当前元素的所有子元素
+                     *
+                     */
+                    var cns2 = city.children;
+                    alert(cns2.length);
+                }
+
+                //为btn06按钮绑定一个单击响应函数
+                var btn06 = document.getElementById("btn06");
+                btn06.onclick = function () {
+                    //获取id为phone的元素
+                    var phone = document.getElementById("phone");
+                    //返回#phone的第一个子节点
+                    //phone.childNodes[0];
+                    //firstChild可以获取到当前元素的第一个子节点（包括空白文本节点）
+                    var fir = phone.firstChild;
+
+                    //firstElementChild不支持ie8及一下
+                    fir = phone.firstElementChild;
+                    alert(fir);
+                }
+
+
+                //为btn07的按钮绑定一个单击响应函数
+                myClick("btn07", function (){
+                    //获取id为bj的节点
+                    var bj = document.getElementById("bj");
+                    //返回#bj的父节点
+                    var pn = bj.parentNode;
+                    alert(pn.innerHTML);//打印标签
+                    alert(pn.innerText);//去除html标签，只打印标签
+                })
+
+                //为btn08的按钮绑定一个单击响应函数
+                myClick("btn08",function (){
+                    //获取id为android的元素
+                    var and = document.getElementById("android");
+                    //返回#android的前一个兄弟节点（也可能获取到空白的文本）
+                    var ps = and.previousSibling;
+
+                    // var pe = and.previousElementSibling;
+                    alert(ps);
+                })
+
+                //读取#username的value属性值
+                myClick("btn09", function (){
+                    //获取id为username的元素
+                    var um = document.getElementById("username");
+                    //读取um的value属性值
+                    //文本框的value属性值，就是文本框中填写内容
+                    alert(um.value);
+                })
+
+                //设置#usernmae的value属性值
+                myClick("btn10", function (){
+                    //获取id为username的元素
+                    var um = document.getElementById("username");
+
+                    um.value = "今天天气不错";
+
+                })
+
+                //返回#bj的文本值
+                myClick("btn11", function (){
+                    //获取id为北京的元素
+                    var bj = document.getElementById("bj");
+
+                    //获取bj的文本节点
+                    var fc = bj.firstChild;
+                    alert(fc.nodeValue);
+                })
+
+            }
+
+        </script>
+
+    </head>
+</html>

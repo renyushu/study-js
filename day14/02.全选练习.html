@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选练习</title>
+    <script type="text/javascript">
+      window.onload = function (){
+        /**
+         * 全选按钮
+         *  - 点击按钮以后，是个多选框全都被选中
+         *
+         */
+        //为id为 checkedAllBtn 的按钮绑定一个单击响应函数
+        var checkedAllBtn = document.getElementById("checkedAllBtn");
+        checkedAllBtn.onclick = function (){
+          // alert("全都选中了~");
+          //获取是个多选框items
+          var items = document.getElementsByName("items");
+          //遍历items
+          for(var i=0; i<items.length; i++){
+            //设置四个多选框变成选中状态
+            items[i].checked = true;
+          }
+        }
+
+        //为id为checkedNoBtn的按钮绑定一个单击响应函数
+        var checkedNoBtn = document.getElementById("checkedNoBtn");
+        checkedNoBtn.onclick = function (){
+          //获取是个多选框items
+          var items = document.getElementsByName("items");
+          //遍历items
+          for(var i=0; i<items.length; i++){
+            //设置四个多选框变成选中状态
+            items[i].checked = false;
+          }
+        }
+
+          /**
+           * 反选
+           * @type {HTMLElement}
+           */
+        //为id为checkedRevBtn的按钮绑定一个单击响应函数
+        var checkedRevBtn = document.getElementById("checkedRevBtn");
+        checkedRevBtn.onclick = function (){
+
+          checkedAllBox.checked = true;
+
+          var items = document.getElementsByName("items");
+
+            //遍历items
+          for(var i=0; i<items.length; i++) {
+              //设置四个多选框变成选中状态
+              items[i].checked = !items[i].checked;
+
+              //判断四个多选框是否全选
+              //只要有一个没选中则就不是全选
+              if(!items[i].checked){
+                  //一旦进入判断，则证明不是全选状态
+                  //将checkedeAllBox设置为没选中状态
+                  checkedAllBox.checked = false;
+              }
+          }
+        }
+
+        //为id为sendBtn绑定一个单击响应函数
+        var sendBtn = document.getElementById("sendBtn");
+        sendBtn.onclick = function (){
+          //获取四个多选框
+          var items = document.getElementsByName("items");
+          //遍历item
+          for(var i = 0; i < items.length; i++){
+            //提交选中的选项
+            if (items[i].checked){
+              alert(items[i].value);
+            }
+          }
+        }
+
+        //为id为checkedAllBox绑定一个单击响应函数
+          /**
+           * 全选/全不选
+           *    - 当它选中时，其余的也选中，当它取消时其余的也取消
+           *
+           * 当事件的响应函数中，响应函数是给谁绑定的this就是谁
+           *
+           */
+        var checkedAllBox = document.getElementById("checkedAllBox");
+        checkedAllBox.onclick = function (){
+          var items = document.getElementsByName("items");
+          //设置多选框的选中状态
+          for(var i=0; i<items.length; i++){
+            // 选项的选中属性 跟随 全选/全不选的选中属性变化
+            items[i].checked = this.checked;
+          }
+
+            /**
+             * 如果四个多选框全都选中，则checkAllBox也应该选中
+             * 如果四个多选框都没选中，则checkAllBox也不应该选中
+             *
+             */
+            //为四个多选中分别绑定点击响应函数
+            for(var i=0; i<items.length; i++){
+                items[i].onclick = function (){
+
+                    //将checkedAllBox设置为选中状态
+                    checkedAllBox.checked = true;
+
+                    for(var j=0; j<items.length; j++){
+                        //判断四个多选框是否全选
+                        //只要有一个没选中则就不是全选
+                        if(!items[j].checked){
+                            //一旦进入判断，则证明不是全选状态
+                            //将checkedeAllBox设置为没选中状态
+                            checkedAllBox.checked = false;
+
+                            //一旦进入判断，则已经得出结果，不用再继续执行循环
+                            break;
+                        }
+
+                    }
+                }
+            }
+        }
+
+      }
+    </script>
+</head>
+<body>
+  <from method="post" action="">
+    你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选
+    <br />
+    <input type="checkbox" name="items" value="足球" />足球
+    <input type="checkbox" name="items" value="篮球" />篮球
+    <input type="checkbox" name="items" value="羽毛球" />羽毛球
+    <input type="checkbox" name="items" value="乒乓球" />乒乓球
+    <br />
+    <input type="button" id="checkedAllBtn" value="全 选" />
+    <input type="button" id="checkedNoBtn" value="全不选" />
+    <input type="button" id="checkedRevBtn" value="反 选" />
+    <input type="button" id="sendBtn" value="提交" />
+  </from>
+</body>
+</html>

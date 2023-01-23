@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      window.onload = function (){
+        //获取count
+        var count = document.getElementById("count");
+
+        //使count中的内容，自动切换
+        /**
+         * Js的程序的执行速度是非常非常快的
+         *  如果希望一段程序，可以间隔一段事件执行一次，可以使用定时调用
+         *
+         *
+         */
+        //
+        // for(var i = 0; i < 100; i++){
+        //   count.innerHTML = i;
+        // }
+        /**
+         * setInterval()
+         *    - 定时调用
+         *    - 可以将一个函数，每隔一段时间执行一次
+         *
+         */
+        var num = 1;
+        var timer = setInterval(function (){
+          count.innerHTML = num++;
+          if(num == 11){
+              //关闭定时器
+              clearInterval(timer);
+          }
+        }, 1000);
+        console.log(timer);
+
+        //关闭定时器
+        //   clearInterval(timer);
+      }
+
+    </script>
+</head>
+<body>
+  <h1 id="count">1</h1>
+</body>
+</html>

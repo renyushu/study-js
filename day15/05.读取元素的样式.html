@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+
+    #box1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+  </style>
+  <script type="text/javascript">
+
+    window.onload = function (){
+
+      //点击按钮以后读取box1的样式
+      var box1 = document.getElementById("box1");
+      var btn01 = document.getElementById("btn01");
+      btn01.onclick = function(){
+        //读取box1的宽度
+        /**
+         * 获取元素的当前显示的样式
+         *  语法:
+         *    元素.currentStyle.样式名
+         * 它们可以用来读取当前元素正在显示的样式
+         *  只有ie支持
+         *
+         *
+         *  在其他浏览器中可以使用
+         *    getComputedStyle()这个方法来获取元素当前的样式,
+         *    这个方法是window的方法可以直接使用
+         *
+         *
+         */
+        var obj = getComputedStyle(box1, null);
+        alert(obj.width);
+      }
+    }
+  </script>
+</head>
+  <body>
+    <button id="btn01">点我一下</button>
+    <br /><br />
+
+    <div id="box1"></div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function (){
+            //获取body标签
+            // var body = document.getElementsByTagName("body");
+
+            /**
+             * 在document中有一个属性body，它保存对的是body的引用
+             */
+            // var body = document.body;
+            // console.log(body);
+
+            /**
+             * document.documentElemnet保存的html根标签
+             */
+            // var html = document.documentElement;
+            // console.log(html);
+            //
+            // var all = document.all;//代表页面中所有的元素
+            // console.log(all);
+
+            /**
+             * 根据元素的class属性值查询一组元素节点对象
+             */
+            var box1 = document.getElementsByClassName("box1");
+            console.log(box1.length);
+
+            /**
+             * 获取页面中的所有div
+             *
+             */
+            //获取class为box1中所有的div
+            //.box2 div
+            /**
+             * document.querySelector()
+             *  - 需要一个选择器的字符串作为参数，可以根绝一个css选择器来查询一个元素节点对象
+             *
+             */
+            var div = document.querySelector(".box2 div");//接受css选择器作为参数
+            console.log(div.innerText);
+
+            var box1 = document.querySelector(".box2");
+            console.log(box1.innerHTML);
+
+            var box2 = document.querySelectorAll(".box2");
+            console.log(box2.length);//符合条件的元素封装到数组中返回
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <div class="box3">我是box2中div</div>
+    </div>
+    <div></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+
+
+
+</body>
+</html>

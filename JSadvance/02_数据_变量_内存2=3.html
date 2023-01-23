@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 关于引用变量赋值的问题
+         *
+         */
+        var obj1 = {name: 'tom'}
+        var obj2 = obj1 //将obj1的内存内容保存到obj2
+        console.log(obj1)///{name: 'tom'}
+        obj1 = 123
+        console.log(obj1)//123
+        console.log(obj2)//{name: 'tom'}
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

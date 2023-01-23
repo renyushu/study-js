@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript">
+    /**
+     * Location
+     *  - 该对象中封装了浏览器的地址栏的信息
+     *
+     *
+     */
+    window.onload = function (){
+      //获取按钮对象
+      var btn = document.getElementById("btn01");
+      btn.onclick =function (){
+        //如果直接打印Location，则可以获取到地址栏的信息
+        // alert(location);
+        // location = "http://www.baidu.com";
+        // location = "01.BOM.html";
+        /**
+         *
+         * assign()
+         *  用来跳转到其他页面，作用和直接修改location一样
+         */
+        location.assign("http://www.baidu.com");
+        location.reload();
+      }
+    }
+  </script>
+
+</head>
+  <body>
+    <button id="btn01">点我一下</button>
+    <h1>Location</h1>
+    <input type="text" />
+    <a href="01.BOM.html">去bom</a>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09练习</title>
+    <style type="text/css">
+      #box1{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /**
+        开启box1的绝对定位
+         */
+        position: absolute;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function (){
+          /**
+           *
+           * 使div可以跟随鼠标移动
+           *
+           * pageX和pageY可以获取鼠标相对于当前页面的坐标
+           *
+           */
+          //获取box1
+          var box1 = document.getElementById("box1");
+          //绑定鼠标移动事件
+          document.onmousemove = function (event){
+
+            //解决兼容问题
+            event = event || window.event;
+
+            //获取到鼠标的坐标
+            var left = event.pageX;
+            var top = event.pageY;
+
+            //设置div的偏移量
+            box1.style.left = left + "px";
+            box1.style.top = top + "px";
+
+
+          }
+
+        }
+
+    </script>
+</head>
+<body>
+  <div id="box1"></div>
+</body>
+</html>
