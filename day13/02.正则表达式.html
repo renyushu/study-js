@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            
+            /*
+                创建一个正则表达式检查一个字符串中是否还有aaa
+
+
+            */
+
+            /*
+            
+                量词
+                    - 通过量词可以设置一个容内出现的次数
+                    - 两次只对前面一个字母起作用
+                    - {n} 正好出现n次
+
+
+
+            */
+           var reg = /a{3}/;
+           reg = /(ab){3}/;
+           reg = /ab{3}c/;
+
+           reg = /ab{1,3}c/; // b出现1 ～ 3次
+           reg = /ab{3,}c/; // b出现3次以上
+
+           reg = /ab+c/; //至少一个b
+
+           reg = /ab*c/; // 0 或者 多个
+
+           reg = /ab?c/; // 0个或者 1个
+
+
+            /*
+            
+                检查一个字符串中是否以a开头
+                    ^表示开头
+                    $表示结尾
+            */
+           reg = /^a/; //匹配开头的a
+           reg = /a$/; //匹配结尾的a
+
+           reg = /^a$/; // a开头a结尾，只能有一个a
+
+           reg = /^a | a $/; // 以a开头，以a结尾
+
+
+           /*
+           
+                手机号
+           */
+           var phoneStr = "13577789090";
+           var phoneReg = /^1[3-9][0-9]{9}$/; // 以1开头； 第二位 3 ～ 9； 三位以后任意数字9个；$表示结尾不能有其他字符
+           console.log(reg.test("da"));
+
+
+        </script>
+
+    </head>
+</html>

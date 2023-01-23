@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            //创建一个数组
+            // var arr = new Array("rick", "jack", "tony");
+            var arr1 = ["rick", "jack", "tony"];
+            console.log(arr1);
+
+            /*
+                push() 
+                - 该方法可以向数组末尾添加一个或多个元素，并返回新的数组长度
+            */
+           var result = arr1.push("唐僧", "如来佛祖");
+            console.log(result);
+            console.log(arr1);
+
+            /*
+                pop()
+                    该方法可以删除数组最后一个元素
+
+
+            */
+           result = arr1.pop();// 返回删除的元素
+
+            console.log(result);
+            console.log(arr1);
+
+
+            /*
+            
+                unshift()
+                    - 向数组开头添加一个或多个元素，并返回新的数组长度
+
+
+                shift()
+                    - 可以删除数组的第一个元素，并将删除的元素作为返回值返回
+
+            */
+
+           result = arr1.unshift("雷神", "钢铁侠"); //在数组前面添加元素，并返回长度
+
+            console.log(result);
+            console.log(arr1);
+
+            result = arr1.shift(); // 删除第一个元素并返回其值
+            console.log(result);
+            console.log(arr1);
+
+            /**
+             * slice()方法：
+             *      可以用来在数组中提取指定元素
+             *          - 参数
+             *              1.截取开始的位置的索引
+             *              2.截取结束的位置的索引
+             * 
+            */
+           var result = arr1.slice(0, 2); //该方法不会影响原数组，截取的元素会以数组的形式返回
+           console.log(result);
+
+           var result = arr1.slice(1);
+           console.log(result);
+
+           var result = arr1.slice(-3, -1);
+           console.log(result);
+
+            /*
+                splice() 删除数组中指定的元素
+                    - 可以删除数组中指定的元素
+                    - 使用splice()会影响到原数组，会将指定元素从原数组中删除
+                        并将被删除的元素作为返回值返回
+                    - 参数：
+                        第一个：表示开始位置的索引
+                        第二个：表示删除的数量
+                        第三个及以后：
+                            可以传递一些新的元素，这些元素将会自动插入到开始位置索引前边
+
+                    会改变数组元素的顺序(index)
+                    
+            
+
+            */
+
+            result = arr1.splice(0, 3);
+            console.log(result);
+            console.log(arr1);
+
+            console.log('*******************')
+
+
+            var arr2 = ["rick", "jack", "tony", "andy"];
+            result = arr2.splice(0,2);
+            console.log(result);
+            console.log(arr2);
+
+        /*
+        
+            concat()  可以连接两个或多个数组，并将新的数组返回
+             - 不会影响原数组
+
+        */
+
+        arr3 = arr1.concat(arr2);
+        console.log(arr3);
+
+        /*
+        
+            join() 
+                - 该方法可以将数组转换为一个字符串
+                             - 不会影响原数组
+
+
+        */
+       result = arr3.join();
+       console.log(result);
+
+
+       /*
+       
+            reverse()方法
+                 - 该方法反转数组元素
+                 - 会直接修改原数组
+
+
+       */
+       console.log(arr2);
+        result = arr2.reverse();
+        console.log(arr2);
+        console.log(result);
+
+
+            /*
+            
+                 sort 
+                    - 可以用来对数组汇中的元素进行排序
+                    - 也会影响原数组，默认会按照Unicode编码进行排序
+
+            */
+           
+
+        </script>
+
+    </head>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            //创建一个字符串
+
+            /*
+            
+                在底层字符串是以支付数组的形式保存的
+            */
+
+            /*
+            
+                length: 返回字符串长度
+
+                charAt():
+                    返回字符串中指定位置的字符
+            */
+            var str = "hello world";
+
+            console.log(str.charAt(9));
+
+            console.log(str.charCodeAt(9));
+
+            /*
+                - 可以根据字符编码去获取字符
+            */
+           var result = String.fromCharCode(77);
+           console.log(result);
+
+           /*
+           
+                截取字符串
+           */
+          var str1 = "sfadfad";
+        //   result = str1.slice(1, 4); //fad
+        //   result = str1.slice(1); //
+        //   result = str1.slice(1, -1); //fadfa
+            result = str1.slice(1, 2);  
+            console.log(result);
+
+        </script>
+
+    </head>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            
+
+            /*
+                search
+                    - 可以搜索字符串中是否含有指定内容
+                    - 如果搜索到指定内容，这回返回第一次出现的索引，如果没有搜索到返回-1
+                    - 它可以接受一个正则表达式作为参数，然后会根据正则表达式去检索字符串
+
+                搜索字符串中是否含有 abc or aec or afc
+            */
+           var str = "helloabc hello aec afc";
+           var result = str.search(/a[bef]c/);
+           console.log(result);
+
+           /*
+           
+            match()
+                - 可以根据正则表达式，从一个字符串中将符合条件的内容提取出来
+                - 默认情况下，找到第一个符合的内容，找到以后就停止
+                - 我们可以设置正则表达式为全局配置模式，这样就会匹配到所有的内容
+                - 可以为一个正则表达式设置多个匹配模式，且顺序无所谓
+
+                -
+
+           */
+
+           str = "1a2b3c4d5j6lD1D1F3J8L0";
+           result = str.match(/[A-z]/gi);//既全局匹配也可忽略大小写
+           console.log(typeof result);
+           console.log(Array.isArray(result));//返回的是一个数组
+           console.log(result)
+
+        //    console.log(str);
+
+
+            /*
+                replace()
+                    - 
+            */
+
+        </script>
+
+    </head>
+</html>

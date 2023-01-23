@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /*
+                运算符也叫操作符
+                    通过运算符可以对一个或者多个值进行运算
+
+                    + - 
+                    比如：typeof就是运算符号，可以用来获得一个值 。他会将盖子的类型以字符串的形式返回
+
+                算数运算符: 当对非Number类型的值进行运算时，会将这些值转换为Number然后在运算
+
+                    + 
+                        +可以对两个值进行加法运算，并将结果返回
+
+                            如果对两个字符串进行加法运算，则会做拼串
+                                会将两个字符串拼接为 一个字符串并返回。
+
+                            任何值和字符串做加法运算，都会转换成字符串，然后做加法运算 (最后是字符串类型)
+                    -
+                        - 可以对两个值进行减法运算，并将结果返回；
+                            非Number类型都会先转换成Number类型在做运算
+
+
+                    *
+                    /
+                    %
+                         取模运算(取余数)
+
+
+
+            */
+
+            var a = 123;
+            var result = typeof a;
+
+            // console.log(result);
+            // console.log(typeof a);
+            // console.log(typeof result);
+
+            result = a + 1;
+            result = 456 + 789;
+            result = true + 1;
+            result = true + false;
+            result = 2 + null;
+
+            result = 2 + NaN;
+
+            result = 2 + undefined;
+
+            result = '123' + '456';// 字符串类型 string
+            result = '你好' + '大哥';// 
+
+            result = 123 + '1'; //字符串类型 string
+
+            result = true + 'hello';//truehello
+
+            console.log(typeof result);
+            console.log(result);
+        
+
+            //任何值和字符串相加都会转换为字符串，并做拼串操作
+            /*
+                我们可以使用这一特点，来将一个人一的数据类型都转换为String
+                我们只需要为任意的数据类型 + 一个“” 即可转换为String
+
+                这是一种隐式的类型转换,由浏览器自动完成，实际上也调用了String()函数
+                
+            */
+           var c = 133;
+           c = c + '';
+           console.log(typeof c);
+           console.log(c);
+
+           result = 1 + 2 + '3';
+           console.log('result = '+ result);
+           /*减法运算*/
+           result = 100 - 5;
+           result = 100 - true;// 99
+           result = 100 - "1"; // 99
+           result = 100 - "null";//NaN
+           result = 100 - "underfined";//NaN
+           result = 100 - false;//100
+
+           console.log(result);
+
+           /*乘法*/
+           result = 2 * 2;
+           result = 2 * "8";
+           result = 2 * undefined;
+           console.log(result);
+
+            /*
+                任何值做 - * / 运算时都会自动转成Number
+                我们可以利用这一特点做隐式的类型转换
+                    可以通过一个值 -0 *1 /1 来将其转换为Number
+            */
+
+            var d = "123";
+            result = d - 0;
+
+            console.log('1 result = '+ result);
+
+            result = 9 % 3;
+
+        </script>
+
+    </head>
+</html>

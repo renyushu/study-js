@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <script type="text/javascript">
+
+            /*
+            
+            */
+            var cash = 500000;
+            var rate = 0.5;
+    
+            var target = 500000*2;
+            var year = 0;
+
+            while(cash <= target){
+                cash = cash * (1+rate);
+                year ++;
+            }
+
+            console.log(year);
+
+        </script>
+
+    </head>
+</html>

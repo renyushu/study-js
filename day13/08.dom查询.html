@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                //为id btn01的按钮绑定一个单击响应函数
+                var btn01 = document.getElementById("btn01");
+                btn01.onclick = function() {
+                    //查找#bj节点
+                    var bj = document.getElementById("bj");
+                    //打印bj
+                    alert(bj.innerHTML);
+                }
+
+                //为id为btn02的按钮绑定一个单击响应函数
+                var btn02 = document.getElementById("btn02");
+                btn02.onclick = function() {
+                    //查找所有的li节点
+                    //getElementsByTagName()可以根据标签名来获取一组元素节点对象
+                    //这个方法会给我返回一个数组对象，所有查询到的元素都会封装到对象中
+                    var lis = document.getElementsByTagName("li");//返回的是一个数组
+                    //打印lis
+                    // alert(lis.length);
+                    for(var i = 0; i < lis.length; i++){
+                        alert(lis[i].innerHTML);//打印文字
+                    }
+                }
+
+                //为id为btn03的按钮绑定一个单击响应函数
+                var btn03 = document.getElementById("btn03");
+                btn03.onclick = function() {
+                    //查找name=gender的所有节点
+                    var inputs = document.getElementsByName("gender");
+                    for(var i = 0; i < inputs.length; i++){
+                        /*
+                        innerHTML用于获取元素内部的html代码的
+                            对于自结束标签没有意义
+
+                         如果需要读取元素节点属性，
+                            直接使用 元素.属性名
+                            注意：class属性不能采用这种方式.
+                                读取时需要使用 .className
+
+                         */
+                        alert(inputs[i].value);
+                    }
+                }
+
+                //
+
+            }
+
+        </script>
+
+    </head>
+</html>

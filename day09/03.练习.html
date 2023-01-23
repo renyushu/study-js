@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            /*
+                打印1～100之间所有的质数
+            */
+           var flag = true;
+           
+            for(i=0; i < 101; i++){
+                if (i == 1){
+                    console.log(i);
+                }else{
+                    for(var count=2; count< i-1; count++){
+                        if(i%count == 0){
+                            flag = false;
+                        }
+                    }
+                    if (flag){
+                        console.log(i);
+                    }
+                    //标志重置
+                    flag = true;
+                }
+            }
+            
+        </script>
+
+    </head>
+</html>

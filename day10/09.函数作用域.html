@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            
+            /*
+            
+                函数作用域：
+                    - 调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁
+                    - 每调用一次函数就会创建一个新的函数作用域，他们之间时相互独立的
+
+                    - 在函数作用域中可以访问到全局作用域的变量
+                        在全局作用域中无法访问到函数作用域的变量
+
+
+                    形参就相当于在函数内部声明了一个变量
+                    
+
+
+            */
+
+            function fun() {
+                d = 100; //函数中不使用var声明变量,则默认为全局变量，相当于 window.d = 100;
+
+                window.c = 1000;
+                console.log(window.c);
+            }
+
+            fun();
+        </script>
+
+    </head>
+</html>

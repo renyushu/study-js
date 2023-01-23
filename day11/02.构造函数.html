@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            
+            /*
+                创建一个Person的构造函数
+            */
+
+            function Person(name, age, gender){
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.sayName = fun;
+            }
+
+            // 将sayName方法在全局作用域定义，避免内存消耗太多
+            /*
+
+                将函数定义在全局作用域，污染了全局作用域的命名空间
+                而且定义在全局作用域也很不安全
+            */
+            function fun() {
+                    alert("Hello大家好, 我是"+this.name);
+                }
+
+            //创建实例
+            var per = new Person("rick", 11, "男");
+            var per1 = new Person("jack", 14, "女");
+
+            per.sayName();
+            per1.sayName();
+
+        </script>
+
+    </head>
+</html>

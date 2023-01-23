@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+
+            /*
+                条件运算符也叫三元运算符
+                语法：
+                    条件表达式？语句1: 语句2；
+
+                    - 执行的流程
+                        条件运算符在执行时，首先对条件表达式进行求职，
+                            如果该值为true,则执行语句1，并返回执行结果
+                            如果该值为false，则执行语句2，并返回执行结果
+            */
+
+            // true?alert("语句1"): alert("语句2");
+
+            var a = 30;
+            var b = 20;
+
+            // a > b ? alert("a大"):alert("b大");
+
+            var result = 1 || 2 && 3;
+            console.log(result);
+
+            console.log(1 || 2); //1
+            console.log(2 && 3);//3
+
+        </script>
+    </head>
+</html>

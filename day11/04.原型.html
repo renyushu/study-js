@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            /*
+            
+                - 使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
+
+                - 可以使用hasOwnProperty()来检查对象自身中是否含有该属性
+                    使用该方法时自由当对象自身中含有属性时，才会返回true
+
+                - 原型对象也是对象，所以他也有原型，
+                    当我们使用一个对象的属性或方法时，会先在自身中寻找
+                        自身中如果有，则直接使用
+                        如果没有则去原型对象中寻找，如果原型对象中有，则使用
+                        如果没有则去原型的原型中寻找，直到找到Object对象的原型
+
+                        Object对象的原型没有原型，如果在Object中依然没有找到，则返回underfined
+
+
+            */
+
+            function Person() {
+
+            }
+
+            Person.prototype.a = "xxx"
+
+            var per = new Person();
+            per.a = 'hello';
+
+
+            // console.log("a" in per);
+
+            // console.log(per.hasOwnProperty("a"));
+
+            console.log(per.__proto__.__proto__.__proto__);// null
+            
+        </script>
+
+    </head>
+</html>

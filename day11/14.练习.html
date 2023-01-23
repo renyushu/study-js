@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+
+            /*
+            
+                感觉做出来没啥问题，就是思路有点乱。。。
+
+                
+            */
+            
+            //创建一个数组
+            var arr = [1, 2, 3, 2, 1, 3, 4, 2, 5];
+
+            //去除数组中重复的数字
+            var count = 0;
+
+            for(var i = 0; i < arr.length; i++){
+                var item = arr[i];
+                console.log(item);
+                
+                for (var index = 0; index < arr.length; index++){
+                    var item2 = arr[index];
+
+                    if(item == item2){
+                        count += 1;
+                    }
+                    if(count > 1){
+                        arr.splice(index, 1);
+                        count -= 1;
+                    }
+                }
+                count = 0;
+            }
+
+            // console.log(arr);
+
+        </script>
+
+    </head>
+</html>

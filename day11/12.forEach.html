@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            
+            /*
+                JS中还为我们提供了一个方法，用来遍历数组
+
+                forEach() 
+                 - 只支持IE8
+
+
+            */
+           //创建一个数组
+            var arr = ["jack", "mark", "pony", "fuck"];
+
+            /*
+                forEach()方法需要一个函数作为参数
+                    - 像这种函数，有我们创建但是不由我们调用的，我们称为回调函数
+                    - 数组中有几个元素，函数就会执行几次.每次执行时，浏览器会将遍历到的元素以实参的形式传递进来
+                    我们可以定义形参，来读取这些内容
+
+                    - 浏览器会在回调函数中传入三个函数
+                        第一个参数：value 数组中对应元素的值
+                        第二个参数：idnex 数组的对应元素的索引
+                        第三个参数: 遍历的数组对象
+
+
+            */
+
+           arr.forEach(function(value, index, obj) {
+                // console.log("a = "+ obj);
+                console.log(value);
+
+           })
+
+        </script>
+
+    </head>
+</html>

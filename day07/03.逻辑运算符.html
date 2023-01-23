@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            /*
+                Js中为我们提供了三种逻辑运算符
+                !非
+                    - ！可以对一个值进行非运算
+                    - 所谓非运算就是指对一个布尔值进行取反操作，
+                        true变false, false变true
+
+                    - 如果对一个值进行两次取反，它不会变化
+                    - 如果对非布尔值进行运算，则会将其转换为布尔值，然后再取反
+
+                &&与
+                    and
+                    - &&可以对符号两侧的值进行与运算结果并返回结果
+                    - 运输规则
+                        - 两个值只要有一个值为false就返回false
+                        只有两个值都为true时，才会返回true
+                        - JS中的"与"属于短路的与，
+                            如果第一个值为false,则不会看第二个值
+
+
+
+                ||或
+                    or
+                    || 可以对符号两侧的值进行或运算并返回结果
+                    运算规则：
+                        - 两个值只要有一个true， 就返回true
+                            如果两个值都为false,才返回false
+
+                        - js中的或属于短路的或
+                            如果第一个值为true，则不会检查第二个值
+
+
+            */
+
+            var a = 10;
+
+            a = !a;
+            console.log("a=" + a);
+
+            var b = 10;
+            b = !b;
+            console.log("b=" + b);
+            console.log(typeof b);
+
+            
+        </script>
+    </head>
+</html>

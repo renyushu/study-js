@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script type="text/javascript">
+            /*
+            
+            
+            */
+
+            var num = prompt("请输入一个大雨1的整数:");
+
+            var flag = true;
+
+            //判断这个值是否合法
+            if(num <= 1){
+                alert("该值不合法!");
+            }else{
+                //判断num是否是质数
+                //获取2 - num之间的数
+                for(var i = 2; i < num; i++){
+                    //判断num是否能被i整除
+                    if(num % i == 0){
+                        //如果能被整除，则说明num一定不是质数
+                        true = false
+                    }   
+                }
+                //
+                if(flag){
+                    console.log(num);
+                }
+            }
+            
+        </script>
+
+    </head>
+</html>
