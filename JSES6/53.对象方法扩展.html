@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES8对象方法扩展</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //声明对象
+    const school = {
+      name: 'atguigu',
+            cities: ['bj', 'sh', 'gz'],
+      xueke: ['fe', 'be', 'qa', 'bigdata']
+    }
+
+    //获取对象所有的键
+    console.log(Object.keys(school))
+    //获取对象所有的键
+    console.log(Object.values(school))
+
+    //entries
+    console.log(Object.entries(school))
+
+    //map
+    const m = new Map(Object.entries(school))
+    console.log(m)
+
+    //对象属性的描述对象
+    console.log(Object.getOwnPropertyDescriptors(school))//返回的是以下对象的设置
+
+    //创建一个对象
+    const obj = Object.create(null, {
+      name: {
+        //设置值
+        value: 'atguigu',
+        //属性特性
+        writable: false,
+        configurable: true,
+        enumerable: true,
+      }
+    })
+
+
+    console.log(obj)
+    console.log(Object.getOwnPropertyDescriptors(obj))
+  </script>
+</body>
+</html>

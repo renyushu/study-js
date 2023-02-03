@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      class Person{
+        //共有属性
+        name;
+        //私有属性
+        #age;
+        #weight;
+        //构造方法
+        constructor(name, age, weight) {
+          this.name = name;
+          this.#age = age;
+          this.#weight = weight;
+        }
+
+        info(){
+            console.log(this.name, this.#age, this.#age)
+        }
+      }
+
+      const girl = new Person('rick', 18, '45kg')
+      // console.log(girl.name, girl.age, girl['#age']) //外部无法访问到私有属性
+      //class内部可以访问到
+      girl.info()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    //模拟获取：
+    //  用户数据 订单数据 商品数据
+    function getUserInfo() {
+        setTimeout(() => {
+            let data = '用户数据';
+            iterator.next(data) //调用生成器，并把用户数据传入
+
+        }, 1000)
+    }
+    function getOrders() {
+        setTimeout(() => {
+            let data = '订单数据'
+            iterator.next(data)
+        }, 1000)
+    }
+
+    function getGoods() {
+        setTimeout(() => {
+            let data = '商品数据'
+            iterator.next(data)
+        }, 1000)
+    }
+
+    function * gen() {
+        let userData = yield getUserInfo() //执行次函数
+        console.log(userData)
+        yield getOrders()
+        yield getGoods
+    }
+
+    let iterator = gen()
+    iterator.next()
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    class Phone{
+      //构造方法
+      constructor(brand, price) {
+        this.brand = brand;
+        this.price = price;
+      }
+
+      //父类的成员属性
+      call(){
+        console.log('我可以打电话')
+      }
+    }
+
+    class SmartPhone extends Phone{
+      //构造方法
+      constructor(brand, price, color, size) {
+        super(brand, price); //Phone.call(this, brand, price)
+        this.color = color;
+        this.size = size;
+      }
+
+      photo(){
+        console.log('拍照')
+      }
+
+      call() {
+        console.log('我是之类的call方法')
+      }
+    }
+
+    let sp = new SmartPhone('apple', 8888, 'black', 'gold')
+    sp.call()
+
+  </script>
+</body>
+</html>

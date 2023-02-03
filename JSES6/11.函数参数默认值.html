@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       * es6允许给函数参数赋值初始化
+       *  - 形参初始值具有默认值的参数，一般位置都要靠后
+       *  - 与解构赋值结合
+       *
+       */
+
+      //1.形参初始值
+
+      function add(a, b, c=10) {
+        return a + b + c
+      }
+
+      let res = add(1, 3)
+      let res1 = add(1, 3, 88)
+
+      console.log(res)
+      console.log(res1)
+
+      //与解构赋值结合
+      //这种写法非常麻烦
+      // function connect(options) {
+      //   let host = options.host
+      //   let port = options.port
+      //
+      // }
+
+      function connect({host, port=9900, username, password} ) {//相当于 connect({host, port=9900, username, password} = options)
+        console.log(host)
+        console.log(port)
+
+      }
+
+      connect({
+        host: 'www.localhost.com',
+      })
+
+      /**
+       *  rest参数
+       */
+
+      function date(...args) {
+        console.log(args)
+      }
+
+      date('rick', 'jack', 'mark')
+
+      function fn(a, b, ...args) {
+        console.log(args)// [3, 4, 5, 6]
+      }
+
+      fn(1, 2, 3, 4, 5, 6)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

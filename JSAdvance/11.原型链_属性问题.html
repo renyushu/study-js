@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function Person(name, age){
+            this.name = name
+            this.age = age
+        }
+
+        Person.prototype.setName = function (name) {
+            this.name = name
+        }
+        var p1 = new Person('tom', 12)
+        p1.setName('bobo')
+        console.log(p1)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

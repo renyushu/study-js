@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      console.log(a1, window.a1)
+      console.log(window.a2)
+      console.log(this)
+
+      var a1 = 3
+      function a2() {
+        console.log('func a2 ....')
+      }
+
+      /**
+       * 函数执行上下文
+       *
+       */
+      console.log('-----------------')
+      function fn(a1) {
+          //可以访问的
+        console.log(a1)
+        console.log(a2)
+        a3()
+        console.log(this)
+        console.log(arguments)
+
+        var a2 = 3
+        function a3() {
+          console.log('a3()')
+        }
+        console.log(this)
+      }
+      fn(1, 32)
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    //生成器其实就是一个特殊的函数
+    //异步编程, 纯回调函数
+    // yield函数代码的分隔符
+    function * gen() {
+      // console.log('hello gen')
+      yield 'rick'
+      yield 'jack'
+      yield 'jjj'
+    }
+
+    let iterator = gen()
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+
+    // //遍历
+    // for(let v of gen()){
+    //   console.log(v)
+    // }
+  </script>
+</body>
+</html>

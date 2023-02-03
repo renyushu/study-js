@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+      const p = new Promise((resolve, reject) => {
+          setTimeout(() => {
+              //设置p对象的状态为失败，并设置失败的值
+              reject("出错啦");
+          }, 1000)
+      });
+
+      // p.then(function (value) {
+      //     console.log(value)
+      // }, function (reason) {
+      //     console.log(reason)
+      // })
+      p.catch((reason) => {
+          console.log(reason)
+      })
+  </script>
+
+</body>
+</html>

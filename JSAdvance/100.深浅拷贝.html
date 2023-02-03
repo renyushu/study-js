@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script>
+    /**
+     * 浅拷贝
+     */
+    var obj = {
+      id: 1,
+      name: 'rick',
+      msg: {
+        age : 18
+      }
+    }
+    var o = {}
+    Object.assign(o, obj)//把obj拷贝给o
+    console.log(o)
+    console.log(o.msg.age === obj.msg.age)//true,说明指向的是同一个对
+
+  </script>
+</body>
+</html>

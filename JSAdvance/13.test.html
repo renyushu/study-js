@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      function A() {
+        
+      }
+
+      A.prototype.n = 1
+
+      var b = new A()
+
+      A.prototype = {
+        n: 2,
+        m: 3
+      }
+
+      var c = new A()
+      console.log(b.n, b.m, c.n, c.m)// 2, 3, 2, 3 x ; 1, underfined, 2, 3
+
+      /**
+       *
+       * test2
+       */
+
+      function F(){}
+
+      Object.prototype.a = function () {
+        console.log('a')
+      }
+      Function.prototype.b = function () {
+        console.log('b')
+      }
+
+      var f = new F()
+      f.a()//a
+      // f.b()//underfined
+      // F.a()a
+      // F.b()b
+
+      console.log(f)
+      console.log(Object.prototype)
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

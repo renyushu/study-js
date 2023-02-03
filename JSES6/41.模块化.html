@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="module">
+    //引入m1.js模块内容
+    import * as m1 from './js/m1.js'
+    console.log(m1)
+  </script>
+
+  <script type="module">
+    //引入m1.js模块内容
+    import * as m2 from './js/m2.js'
+    console.log(m2)
+  </script>
+
+  <script type="module">
+      //引入m1.js模块内容
+      import * as m3 from './js/m3.js'
+      console.log(m3)
+      m3.default.teach()
+  </script>
+
+  <script type="text/javascript">
+    /**
+     * 模块功能主要由两个命令构成：export和import
+     *  - export命令用于规定模块的对外接口
+     *  - import命令用于输入其他模块提供的功能
+     *
+     */
+
+  </script>
+
+
+</body>
+</html>

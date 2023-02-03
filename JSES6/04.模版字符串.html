@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       *
+       * 模版字符串
+       *  1.声明
+       *    、、
+       *
+       *  2.内容中可以直接出现换行符号
+       *
+       *
+       */
+
+      //内容中可以直接出现换行符
+      let str = `<ul>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+</ul>`
+
+      //变量拼接
+      let lovest = 'weixiang'
+      let out = `${lovest}是我心中最搞笑的演员`
+      console.log(out)
+
+      /**
+       * ES6允许在大括号里，直接写入变量和函数，作为对象的属性和方法
+       * 这样的书写更加简洁
+       */
+      let name = '尚硅谷'
+      let change = function () {
+        console.log('我们可以改变你！！')
+      }
+
+      const school = {
+        // name: name,
+        // chang: change
+
+        //这样书写更加简洁
+        name,
+        change,
+        // improve: function () {
+        //   console.log('努力提高自己的技能')
+        // }
+
+        improve(){
+          console.log('努力提高自己的技能')
+        },
+        run(){
+          console.log('run......')
+        }
+      }
+
+      console.log(school.name)
+      school.change()
+      school.improve()
+      school.run()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

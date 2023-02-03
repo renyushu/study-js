@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       * Web Workers多线程
+       *
+       */
+        window.onload = function () {
+          function fib(n){
+            return n <= 2 ? 1 : fib(n-1) + fib(n-2)//递归调用
+          }
+          console.log(fib(5))
+
+          //获取input
+          var input = document.getElementById("input")
+          //获取按钮
+          var btn01 = document.getElementById("btn01")
+          btn01.onclick = function () {
+            var num = input.value
+            var result = fib(num)
+            alert(result)
+          }
+
+        }
+    </script>
+</head>
+<body>
+  <input type="text" placeholder="数值" id="input">
+  <button id="btn01">计算</button>
+</body>
+</html>

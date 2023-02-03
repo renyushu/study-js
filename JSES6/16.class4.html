@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    //手机
+    function Phone(brand, price) {
+        this.brand = brand
+        this.price = price
+    }
+
+    Phone.prototype.call = function () {
+        console.log('我可以大电话')
+    }
+
+    //智能手机
+    function SmartPhone(brand, price, color, size) {
+        Phone.call(this, brand, price)
+        this.color = color
+        this.size = size
+    }
+
+    //设置子集构造函数的原型
+    SmartPhone.prototype = new Phone;
+    SmartPhone.prototype.constructor = SmartPhone;
+
+    //调用子类的方法
+    SmartPhone.prototype.photo = function () {
+        console.log('photo()')
+    }
+
+    const cz = new SmartPhone('cz', 4444, 'black', '5.5')
+    console.log(cz)
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    /**
+     * ES6中的类
+     */
+
+    //1.创建类class创建一个明星类
+    class Star {
+      //构造函数
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      sing() {
+        console.log('我唱歌')
+      }
+      run() {
+        console.log('run....')
+      }
+    }
+    //2.利用类创建对象new
+    let s = new Star('rick', 18);
+    let s1 = new Star('jack', 44);
+
+    console.log(s, s.name, s.age)
+    console.log(s1.name, s1.age)
+    s.sing()
+
+    /**
+     * 类的继承
+     */
+
+    class Father {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age
+      }
+      money() {
+        console.log(100)
+      }
+    }
+
+    class Son extends Father{
+      constructor(name, age) {
+        super(name, age);//调用了父类的构造函数
+      }
+    }
+
+    let son1 = new Son('jack', 888);
+    son1.money()
+  </script>
+
+</body>
+</html>

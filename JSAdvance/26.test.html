@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       * 先执行变量提升，在执行函数提升
+       *
+       */
+      function a() {
+
+      }
+      var a;
+      console.log(typeof a)
+
+      /**
+       * 2
+       *
+       */
+
+      if(!(b in window)) {
+        var b = 1//这里会发生变量提升
+      }
+      console.log(window)
+      console.log(b in window)
+      console.log(b)//underfined
+
+      /**
+       * test3
+       *
+       *
+       */
+
+      var c = 1
+      function c() {
+        console.log(2)
+      }
+      // c = 1
+      c(2)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

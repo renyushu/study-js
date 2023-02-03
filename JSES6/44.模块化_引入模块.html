@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="module">
+      /**
+       * 引入模块
+       */
+
+      //解构赋值的形式
+      import {school, teach} from './js/m1.js';
+      import {school as s, teach as t} from './js/m2.js';
+      import {default as m3} from './js/m3.js';
+
+
+      // console.log(school)
+      // console.log(teach)
+      // console.log(s)
+      // console.log(t)
+      // console.log(m3)
+
+      //简便模式：针对默认倒入
+      import m33 from './js/m3.js';
+      console.log(m33)
+
+
+  </script>
+
+</body>
+</html>

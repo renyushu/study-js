@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        /**
+         * 静态成员：
+         *      属于类的而不是属于实例对象的
+         *
+         */
+        
+        // function Phone() {
+        //
+        // }
+
+        class Phone{
+            static product = 'apple'
+            static area = 'cn'
+            static change(){
+                console.log('我可以改变世界')
+            }
+        }
+
+        let iphone = new Phone();
+        console.log(iphone.product)
+        console.log(Phone.name)
+        Phone.change()
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+      /**
+       * get 和 set
+       *
+       *
+       */
+      class Phone{
+          get price(){ //给属性绑定了一个函数，只要读取这个属性就会触发这个函数
+              console.log('价格属性被读取了')
+              return 999
+          }
+
+          //必须要有参数
+          set price(newVal){
+              console.log('价格属性被修改了')
+          }
+      }
+
+      //实例化对象
+      let s = new Phone();
+
+      console.log(s.price)
+      s.price = 888
+      // console.log()
+  </script>
+</body>
+</html>

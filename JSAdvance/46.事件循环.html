@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      setTimeout(() => {
+        console.log('timeout callback1（）')//立即放入宏队列
+        Promise.resolve(3).then(
+                value => {
+                  console.log('Promise onResolved3()', value)//当这个宏任务执行后 立马放入微队列,所以这个微任务执行完后下个宏任务才能执行
+                }
+        )
+      }, 0)
+
+      setTimeout(() => {
+        console.log('timeout callback2（）') //立即放入宏队列,
+      }, 0)
+
+      Promise.resolve(1).then(
+              value => {
+                console.log('Promise onResolved1()', value)//立即放入微队列
+                setTimeout(() => {
+                  console.log('timeout callback3（）', value) //立即放入宏任务
+                }, 0)
+              }
+      )
+
+      Promise.resolve(2).then(
+              value => {
+                console.log('Promise onResolved2()', value)//立即放入微队列
+              }
+      )
+      console.log('同步代码') //同步代码立即执行
+    </script>
+</head>
+<body>
+
+</body>
+</html>

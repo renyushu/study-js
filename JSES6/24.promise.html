@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    //实例化Promise对象
+    // 三种状态: 初始化，成功，失败
+    const p = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        //如果读取数据库中的数据成功，则调用resolve
+        // let data = '数据库中的用户数据'
+        // resolve(data);//调用了resolve之后表示成功状态
+
+        //如果读取数据库中的数据发生错误，则调用reject
+        let data = '发生错误'
+        reject(data);
+      }, 3000)
+    })
+
+    //调用promise对象的then方法
+    p.then(function (value) {
+      console.log(value)
+    }, function (reason) {
+      console.error(reason)
+    })
+    
+  </script>
+</body>
+</html>

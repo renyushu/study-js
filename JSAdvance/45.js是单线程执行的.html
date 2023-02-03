@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       *
+       *
+       */
+      setTimeout(function () {
+        console.log('timeout 2022')
+      }, 5000)
+      setTimeout(function () {
+        console.log('timeout 1111')
+      }, 1000)
+
+      function fn() {
+        console.log('fn')
+      }
+      console.log('alert() 之前')
+      alert('---------')//暂停当前主线程的执行，并没有暂停计时
+      console.log('alert() 之后')
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

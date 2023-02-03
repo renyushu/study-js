@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //test1
+        var name = 'the window'
+        var object = {
+            name: 'my object',
+            getNameFunc: function () {
+                return function () {
+                    return this.name;
+                }
+            }
+        };
+        alert(object.getNameFunc()())//得到的是一个函数，直接执行函数，this就是window
+
+        //test2
+        var name2 = 'the window'
+        var object2 = {
+            name2: 'my object',
+            getNameFunc: function () {
+                var that = this;
+                return function () {
+                    return that.name2
+                }
+            }
+        }
+        alert(object2.getNameFunc()())//this时保存的时调用时的对象 object2，所以函数执行时this依然时object2
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

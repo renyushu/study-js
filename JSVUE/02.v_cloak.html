@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{ message }}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '这是一段文本'
+            }
+        })
+    </script>
+</body>
+</html>

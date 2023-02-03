@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+    <script type="text/javascript">
+        /**
+         * 原型链
+         *      访问一个对象的属性时，现在自身查找，找到返回
+         *      如果没有，再沿着__proto__这条链向上查找，找到返回
+         *      如果最终没有找到，返回underfined
+         *
+         *  函数的显示原型指向的对象：默认时空的Object实例对象（但是Object不满足
+         *
+         *
+         *
+         */
+        function Fn() {
+
+        }
+
+        var f1 = new Fn()
+        console.log(Fn.prototype instanceof Object)//true
+        console.log(Object.prototype instanceof  Object)// fasle
+        console.log((Function.prototype instanceof Object))//true
+
+        /**
+         *
+         * 所有函数是Function自身的实例（包含Function）
+         *
+         *
+         */
+        console.log(Function.__proto__ === Function.prototype)//true
+        /**
+         * Object的原型对象是原型链尽头:null
+         *
+         */
+        console.log(Object.prototype.__proto__)//null
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

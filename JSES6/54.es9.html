@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    /**
+     * 对象展开
+     */
+    // function connect({host, port, ...user}) {//...user表示：除了host和port参数，其余都在一个对象中（此函数传入的是一个对象）
+    //   console.log(host)
+    //   console.log(port)
+    //   console.log(user)
+    //
+    // }
+    // connect({
+    //   host: '127.0.01',
+    //   port: 3306,
+    //   user: 'rick',
+    //   password: '1234324',
+    //   type: 'master'
+    // })
+
+    const apple = {
+      name: 'jobs',
+      // area: 'us'
+    }
+
+    const xiaomi = {
+      name1: 'neibusi',
+      // area: 'cn'
+    }
+    const sx = {
+      name2: 'li',
+      // area: 'south koera'
+    }
+    const phones = {...apple, ...xiaomi, ...sx};//合并对象时，如果存在相同的属性名，后者会覆盖前者的属性值
+
+    console.log(phones)
+
+    /*
+    let obj1 = {
+        name: 'dk',
+        age: '99',
+        feature: 'stronge'
+    }
+
+    let obj2 = {
+        name: 'tk',
+        age: '99',
+        feature1: 'noStronge',
+        address: {
+            city: '广州',
+            address: {
+                city: '深圳'
+            }
+        },
+        skills: ['JavaScript', 'React', 'Node']
+    }
+
+    let res = {...obj1, ...obj2};
+    // res.address.address.city = '杭州';
+    // console.log(obj2);
+    console.log(res);
+
+     */
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 关于引用变量赋值的问题
+         *
+         */
+        // var obj1 = {name: 'tom'}
+        // var obj2 = obj1 //将obj1的内存内容保存到obj2
+        // console.log(obj1)///{name: 'tom'}
+        // obj1 = 123
+        // console.log(obj1)//123
+        // console.log(obj2)//{name: 'tom'}
+
+        var a = {age: 13}
+
+        function fn2(obj) {
+            //函数形参obj: 相当于var obj; obj = a; obj = {age: 88}
+
+            obj = {age: 88}//会在函数的执行完毕之后，变成垃圾对象
+
+        }
+        fn2(a)
+        console.log(a.age)
+
+        /**
+         *
+         * 定义形参就相当于在函数作用域中声明了变量
+         *
+         * 函数作用域会在函数执行完毕之后销毁
+         */
+        var e = 10;
+        function fun5(e){
+            console.log(e);
+        }
+        fun5(); // undefined
+        fun5(55);  // 55
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

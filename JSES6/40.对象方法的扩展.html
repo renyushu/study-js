@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+     let o1 = {}
+     let o2 = {}
+    //1.Object.is判断连个值是否完全相等
+    console.log(Object.is(120, 120))
+    console.log(Object.is(o1, o2))
+
+     console.log(NaN, NaN);
+
+    //2.Object.assign对象的合并
+    const config1 = {
+      host: 'localhost',
+      port: 3306,
+      name: 'root',
+      test: 'test'
+    }
+
+    const config2 = {
+      host: 'www.atguigu.com',
+      port: 3306,
+      name: 'atguigu.com',
+      password: 'jack'
+    }
+
+    console.log(Object.assign(config1, config2))
+  </script>
+</body>
+</html>

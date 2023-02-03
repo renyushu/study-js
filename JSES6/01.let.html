@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /**
+     *
+     * let
+     *  - 变量不能重复声明
+     *  - 块级作用域(let只能在块级作用域里有效）
+     *  - 不存在变量提升
+     *  - 不影响作用域链
+     *
+     *
+     */
+
+    //声明变量
+    let a;
+    let b,c,d;
+    let f = 342, g = 'hello', h = [];
+    //不能重复声明
+    {
+      let girl = 'peiqi';
+    }
+    // console.log(girl);
+    console.log(song);
+    var song = 'lianaidaren';
+
+    {
+      let school = '尚硅谷';
+      function fn() {
+        console.log(school)
+      }
+    }
+    fn();
+
+  </script>
+
+</body>
+</html>

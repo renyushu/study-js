@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * Promise.allSettled([p1, p2])
+         *  返回所有的任务状态不管还是成功
+         *
+         *  Promise.all[p1, p2]
+         *     使用场景： 所有成功才返回
+         */
+
+        //声明两个promise
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve('商品数据 - 1');
+                reject('获取失败');
+            }, 1000)
+        })
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 2');
+            }, 2000)
+        })
+
+        //调用allSettled方法
+        const res = Promise.allSettled([p1, p2])
+        // const res = Promise.all([p1, p2])
+        console.log(res)
+    </script>
+</head>
+<body>
+</body>
+</html>

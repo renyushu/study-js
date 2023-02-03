@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+  <script type="text/javascript">
+      /**
+       *
+       */
+
+      //数组的解构赋值
+      let names = ['rick', 'jack', 'tony']
+      let [rick, jack, tony] = names
+      console.log(rick)
+      console.log(jack)
+      console.log(tony)
+
+      //对象的结构赋值
+      let obj = {
+          name: 'rick',
+          age: 90,
+          run: function () {
+              console.log('run....')
+          }
+      }
+
+      //全部结构
+      // let{name, age, run} = obj
+      // console.log(name)
+      // console.log(age)
+      // console.log(run)
+
+      //部分结构
+      let {run} = obj
+      console.log(run)
+      run()
+
+  </script>
+
+</body>
+</html>

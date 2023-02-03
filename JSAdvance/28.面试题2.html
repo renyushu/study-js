@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 作用域面试题
+         */
+        var fn = function () {
+            console.log(fn)
+        }
+        fn()
+
+        var obj = {
+            fu2: function () {
+                // console.log(fu2)//报错：not defined; 首先会在函数作用域中寻找，发现没有，然后去全局作用中寻找，也没有。
+                console.log(this.fu2)
+            }
+        }
+        obj.fu2()
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

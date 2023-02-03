@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <script type="text/javascript">
+    /**
+     * symbol标识独一无二的值
+     */
+      //创建Symbol
+      let s = Symbol()
+
+      let s2 = Symbol('atguigu')
+      let s3 = Symbol('atguigu')
+      //Symbol.for 创建
+      let s4 = Symbol.for('atguigu')
+      let s5 = Symbol.for('atguigu')
+
+      console.log(s4 === s5)//true
+
+      console.log(s4, typeof s4)
+
+      /**
+       * Symbol使用
+       */
+      //向对象中添加方法 up down
+      let game = {
+                name: 'rick',
+                up: function () {
+
+                },
+                down: function () {
+
+                }
+              }
+
+      //借助symbol
+      let methods = {
+        up: Symbol(),
+        down: Symbol()
+      }
+      
+      game[methods.up] = function () {
+        
+      }
+      
+      game[methods.down] = function () {
+
+      }
+      console.log(game)
+
+      let youxi = {
+        name: '狼人杀',
+        [Symbol('say')]: function () {
+          console.log('我可以发言')
+        },
+        [Symbol('zibao')]: function () {
+          console.log('我可以发言')
+        }
+      }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "my_project2",
+  "version": "1.0.0",
+  "description": "这是对包的介绍",
+  "main": "index.js",
+  "scripts": {
+    "start": "ls -al"
+  },
+  "author": "rick",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

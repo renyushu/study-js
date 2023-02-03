@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       * 组合继承
+       * 方式2：借用构造函数继承（假的）
+       *  1。套路
+       *    - 定义父类型构造函数
+       *    - 定义子类型构造函数
+       *    - 在子类型构造函数中调用父类型构造
+       * 2。 关键
+       *  1。在子类型构造函数中通过call()调用父类型构造函数
+       *
+       *
+       */
+      function Person(name, age) {
+        this.name = name
+        this.age = age
+      }
+
+      Person.prototype.setName = function (name) {
+        this.name = name
+      }
+      function Student(name, age, price) {
+        //为了得到属性
+        Person.call(this, name, age)//相当于: this.Person(name, age) Student没有这个方法，所有不能直接使用this.Person
+        /**
+         * this.name = name
+         * this.age = age
+         */
+        this.price = price
+      }
+      Student.prototype = new Person()//为了能看到父类型的方法
+      Student.prototype.constructor = Student //修正constructor属性
+      Student.prototype.setPrice = function (price) {
+        this.price = price
+      }
+      var s = new Student('rick', 12, 1000000)
+      console.log(s.name, s.age, s.price)
+      s.setName('jack')
+      s.setPrice(1000)
+      console.log(s.name, s.age, s.price)
+
+      console.log(s)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 在js调用函数时传递变量参数时，是值传递还是引用传递
+         *  都是值
+         *      - 基本值
+         *      - 引用值
+         *
+         *      理解1： 都是值传递（基本/地址值）传递
+         *      理解2： 可能是值传递，也可能是引用传递（地址值）
+         *
+         *
+         *
+         *
+         */
+        var a = 3;
+        function (a) {
+            a = a + 1
+        }
+        fn(a)//传递的是值:3
+        a = {name: 'rick'}
+        fn(a)//传递的是值:3
+        console.log(a)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

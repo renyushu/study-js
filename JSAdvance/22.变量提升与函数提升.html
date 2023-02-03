@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /**
+       *
+       */
+
+      var a = 3
+      function fn() {
+        // var a; 这里会发生变量提升
+        console.log(a)
+        var aa = 4
+      }
+
+      fn()
+
+      console.log(b)//如果没有定义会报错：xxx is not defined;
+
+      var b = 99//这里会发生变量提升，以上语句会输出underfined
+
+
+      /**
+       * 函数变量提升，必须使用声明式
+       */
+      f1()//可调用，函数提升
+      f2()//不可调用，变量提升
+
+      var f2 = function () {
+
+      }
+      function f1() {
+
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

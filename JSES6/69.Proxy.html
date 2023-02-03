@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     * proxy
+     */
+
+    const target = {
+      id: 'target'
+    }
+
+    const handler = {}
+    const proxy = new Proxy(target, handler)
+
+    //id属性会访问同一个值
+    console.log(proxy.id)
+    console.log(target.id)
+
+    //给目标属性赋值会反映在两个对象上
+    //因为两个对象访问的时同一个值
+    target.id = 'foo'
+    console.log(proxy.id)
+    console.log(target.id)
+
+    //给代理属性赋值会反映在两个对象上
+    //因为这个赋值会转移到目标对象
+    proxy.id = 'bar'
+    console.log(proxy.id)
+    console.log(target.id)
+
+    //hasOwnProperty()方法在连个地方
+    //都会应用到目标对象
+    console.log(target.hasOwnProperty('id'))
+    console.log(proxy.hasOwnProperty('id'))
+
+
+  </script>
+</body>
+</html>

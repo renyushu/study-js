@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script>
+    /**
+     * 定义新属性或修改原有的属性
+     *
+     */
+
+    var obj= {
+      id: 1,
+      name: 'rick',
+      price: 9999
+    }
+
+    //es5中修改对象属性的方法
+    //新增属性
+    Object.defineProperty(obj, 'num', {
+      value: 8888,
+    })
+    console.log(obj)
+
+    //修改属性
+    Object.defineProperty(obj, 'price', {
+      value: 9.9
+    })
+    console.log(obj)
+
+    Object.defineProperty(obj, 'id', {
+      writable: false //不允许修改
+    })
+
+    Object.defineProperty(obj, 'address', {
+      value: '中国山东蓝翔技校',
+      writable: false, //不允许修改
+      enumerable: false,//不允许遍历此属性
+      configurable: false,//不可以被删除
+    })
+    console.log(Object.keys(obj));//['id', 'name', 'price']
+    console.log(obj['address'])//可以访问
+
+    Object.defineProperty(obj, 'address', {
+      value: '中国山东蓝翔技校',
+      writable: false, //不允许修改
+      enumerable: false,//不允许遍历此属性
+      configurable: false,//不可以被删除
+    })
+
+    // Object.defineProperty(obj, 'address', {
+    //   value: '中国山东蓝翔技校',
+    //   writable: true, //不允许修改
+    //   enumerable: true,//不允许遍历此属性
+    //   configurable: true,//不可以被删除 不允许修改第三个参数里面的特性
+    // })
+    delete obj.address
+    console.log(obj)
+
+  </script>
+</body>
+</html>

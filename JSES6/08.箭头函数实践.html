@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: #58a;
+      }
+    </style>
+    
+</head>
+<body>
+  <div id="ad"></div>
+  <script>
+    
+    //需求1 点击div 2s后颜色变成【粉色】
+    let ad = document.getElementById("ad")
+    //绑定事件
+    ad.addEventListener("click", function () {
+      console.log(this)//ad
+
+      // //保存this的值
+      // let _this = this;
+      //
+      // setTimeout(function () {
+      //   // console.log(this)
+      //   //修改背景颜色 this
+      //   _this.style.background = 'pink';
+      //
+      // }, 2000)
+
+        /**
+         * 为什么这样可以呢？
+         *  - 因为箭头函数的this是静态的，是函数声明时外层作用域的this。因为是在ad.addEventListener("click", function () {}里面声明的(这个函数里面的this指向事件源ad)
+         *      所以this就是ad
+         *
+          */
+      setTimeout(() => {
+        this.style.background = 'pink'
+      }, 2000)
+
+
+    })
+    
+    
+    //需求2 从数组中返回偶数的元素
+    const arr = [1, 3, 4, 4, 5, 5, 8, 88, 888]
+    const res = arr.filter(item => item % 2 === 0)
+    console.log(res)
+  </script>
+</body>
+</html>

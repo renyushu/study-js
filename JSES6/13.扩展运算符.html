@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <script type="text/javascript">
+
+    /**
+     *
+     */
+
+    function f() {
+      console.log(arguments)
+    }
+
+    const pers = ['rick', 'andy', 'jack']
+    f(...pers) //相当于 f(rick, andy, jack)
+
+    /**
+     *
+     * 数组的合并
+     */
+
+    const kuaizi = ['xiaoyang', 'wangtaili']
+    const fhcq = ['zy', 'lh']
+
+    const kzfh = [...kuaizi, ...fhcq]
+    console.log(kzfh)
+
+    /**
+     * 数组的克隆
+     */
+    const company = ['apple', 'google', 'tesla']
+    const c2 = [...company]
+    console.log(c2)
+
+    /**
+     * 伪数组转换为真正的数组
+     *
+     */
+
+    const divs = document.querySelectorAll('div')
+    const divArr = [...divs]
+    console.log(divArr)
+
+
+  </script>
+</body>
+</html>

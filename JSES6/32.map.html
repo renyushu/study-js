@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+      //声明一个map
+      let m = new Map()
+
+      //添加元素
+      m.set('name', 'rick')
+      m.set('change', function () {
+        console.log("我们可以改变你")
+      })
+
+      let key = {
+        school: 'atguigu'
+      }
+
+      m.set(key, ['bj', 'sz'])
+      //size
+      console.log(m.size)
+      //delete
+      m.delete(key)
+      //获取
+      console.log(m.get('change'))
+      m.get('change')()
+
+      //晴空
+      // m.clear()
+      for(let v of m) {
+        console.log(v)
+      }
+      // console.log(m)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
