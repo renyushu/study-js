@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>本地存储的演示</h1>
+  <button id="btn01">存</button>
+  <button id="btn02">取</button>
+  <hr>
+
+  <script>
+    const btn01 = document.getElementById("btn01")
+    const btn02 = document.getElementById("btn02")
+
+    btn01.onclick = () => {
+      console.log(sessionStorage)
+      sessionStorage.setItem("name", "rick")
+      sessionStorage.setItem("age", 18)
+
+    }
+
+    btn02.onclick = () => {
+      //获取数据
+      const name = sessionStorage.getItem("name")
+      console.log(name)
+
+    }
+  </script>
+</body>
+</html>

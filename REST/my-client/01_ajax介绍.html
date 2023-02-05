@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击加载数据</button>
+    <script>
+      var btn = document.getElementById("btn")
+      btn.onclick = function () {
+        // alert("加载数据")
+        //xhr
+        //创建一个新的xhr对象，xhr表示请求信息
+        const xhr = new XMLHttpRequest()
+
+        //设置请求的信息
+        xhr.open("GET", "http://localhost:3000/students")
+
+        xhr.send()
+      }
+    </script>
+</body>
+</html>
