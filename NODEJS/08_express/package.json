@@ -1,0 +1,15 @@
+{
+  "name": "08_express",
+  "version": "1.0.0",
+  "main": "01_Hello_World.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "start": "npx nodemon 03_param_post请求.js"
+  }
+}

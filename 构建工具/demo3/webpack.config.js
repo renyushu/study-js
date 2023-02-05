@@ -5,7 +5,7 @@ const HTMLPlugin = require("html-webpack-plugin")
 
 module.exports = {
     mode: "development", //设置打包的模式，production表示生产模式
-    // entry: "./hello/hello.js", //用来指定打包时的主文件 默认：./src/index.js
+    // entry: "./hello/hello.js", //用来指定打包时的主文件 默认：./src/01_Hello_World.js
     output: {
         //表示打包后的文件输出到hello目录
         // path: path.resolve(__dirname, "hello"), //指定打包的目录，必须要绝对路径;
