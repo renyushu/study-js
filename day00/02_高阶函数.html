@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <script>
+    var ADD = function add(a) {
+      return function(b) {
+        return a+b
+      }
+    }
+    // 调用：ADD(2)(3)即可获得结果
+    console.log(ADD(2)(3))
+
+    var hw = function (a) {
+      console.log('hello world', a)
+    }
+    hw(1)
+  </script>
+</body>
+</html>

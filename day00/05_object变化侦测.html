@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>object的变化侦测</h1>
+  <script>
+
+    let car = {}
+    let val = 3000
+    Object.defineProperty(car, 'price', {
+      enumerable: true,
+      configurable: true,
+      get(){
+        console.log('price属性被读取了')
+        return val
+      },
+      set(newVal){
+        console.log('price属性被修改了')
+        val = newVal
+      }
+    })
+  </script>
+</body>
+</html>
